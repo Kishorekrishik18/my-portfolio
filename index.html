@@ -13,6 +13,7 @@
   <header>
     <nav>
       <h1>My Portfolio</h1>
+      <button id="theme-toggle">🌙</button>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -22,34 +23,57 @@
   </header>
 
   <section class="hero">
-    <h2>Hello, I’m an ASP.NET Developer</h2>
+    <h2 id="typing-text">Hello, I’m an ASP.NET Developer</h2>
     <p>I build secure web apps using .NET and Vue.js</p>
     <a href="#contact">Contact Me</a>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a .NET Core developer with frontend experience in Vue.js. I’ve built secure, scalable microservices and performed application security testing too.</p>
+    <h2 id="typing-text">About Me</h2>
+    <p>
+        Results-driven Software Engineer with a year of experience in developing innovative solutions that enhance user
+        experience and operational efficiency. Proficient in ASP.NET Core and Vue, delivering robust microservices and
+        API-driven applications. Expertise in application security, including penetration testing and vulnerability
+        remediation, fortifying system integrity. Committed to leveraging advanced development practices and security
+        measures to drive impactful software projects and ensure compliance with industry standards.
+    </p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Bold Sign</h3>
-      <p>An e-signature platform built with .NET Core & Vue. Implemented advanced features and security testing.</p>
+
+  <section id="experience">
+    <h2 id="typing-text">Experience</h2>
+    <div class="dropdown">
+        <button class="dropdown-btn">Syncfusion - Software Engineer ⬇</button>
+        <div class="dropdown-content">
+            <p>🔹 Developed and enhanced Bold Sign, a microservices-based e-signature web app, using ASP.NET Core and Vue.</p>
+            <p>🔹 Implemented Clone Bulk Link using APIs with Swagger, enabling users to replicate bulk signing documents seamlessly.</p>
+            <p>🔹 Designed a form field positioning system with precise X/Y coordinates for accurate document customization.</p>
+            <p>🔹 Automated document deletion and scheduling through API-driven workflows.</p>
+            <p>🔹 Enforced role-based access control (RBAC) using ASP.NET policies for secure API interactions.</p>
+            <p>🔹 Wrote NUnit test cases for microservices APIs and features.</p>
+            <p>🔹 Transitioned to the Application Security team, performing penetration testing using Burp Suite.</p>
+            <p>🔹 Created Data Flow Diagrams (DFDs) with Threat Dragon for security analysis.</p>
+            <p>🔹 Discovered 50+ vulnerabilities, including 20+ critical issues related to business logic flaws and OWASP Top 10 threats.</p>
+        </div>
     </div>
-    <!-- Add more projects -->
   </section>
+
 
   <section id="contact">
-    <h2>Contact</h2>
+    <h2 id="typing-text">Contact Me !!!</h2>
     <p>Email: vithyakishore18@email.com</p>
     <p>Mobile: +91 7010632557</p>
     <p>LinkedIn: <a href="https://github.com/yourusername">yourusername</a></p>
   </section>
 
+  <div class="scroll-top-wrapper">
+    <button id="topBtn">
+        ⬆️ <span class="scroll-text">Back to Top</span>
+    </button>
+  </div>
+
   <footer>
-    <p>© 2025 Your Name</p>
+    <p>© 2025 Kishore Krishik</p>
   </footer>
 
   <script src="script.js"></script>
