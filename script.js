@@ -10,16 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Typing effect
-  const roles = ["ASP.NET Developer", "Application Security Engineer", "Full Stack Developer"];
+  const roles = ["Vue js and ASP.NET Core", "Application Security Engineer", "Full Stack Developer with"];
   const typingTexts = document.querySelectorAll(".typing-text");
   let roleIndex = 0;
   let charIndex = 0;
 
   function typeRole() {
-    typingTexts.forEach(el => el.textContent = roles[roleIndex].substring(0, charIndex));
+    typingTexts.forEach(el => el.textContent = roles[roleIndex].substring(0, charIndex) + "|");
     if (charIndex < roles[roleIndex].length) {
       charIndex++;
-      setTimeout(typeRole, 100);
+      setTimeout(typeRole, 150);
     } else {
       setTimeout(eraseRole, 1500);
     }
@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   typeRole();
 });
+
+function toggleDropdown() {
+    const list = document.querySelector('.experience-list');
+    const dropdown = document.querySelector('.dropdown');
+
+    list.classList.toggle('hidden');
+    dropdown.textContent = list.classList.contains('hidden') ? '↓' : '↑';
+}
 
 // Theme toggle
 document.getElementById("theme-toggle").addEventListener("click", function () {
