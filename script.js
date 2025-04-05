@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Typing effect
-  const roles = ["Vue js and ASP.NET Core", "Application Security Engineer", "Full Stack Developer with"];
+  const roles = ["Vue js and ASP.NET Core", "Application Security Engineer", "Full Stack Developer"];
   const typingTexts = document.querySelectorAll(".typing-text");
   let roleIndex = 0;
   let charIndex = 0;
