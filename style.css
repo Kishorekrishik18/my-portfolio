@@ -255,7 +255,7 @@ body.light-mode {
   display: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .job-title {
     flex-direction: row;
     justify-content: space-between;
@@ -306,12 +306,6 @@ body.light-mode {
   animation: fadeInUp 0.5s ease forwards;
 }
 
-@keyframes fadeInUp {
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
 
 /* Delay animation for each point */
 .experience-point:nth-child(1) { animation-delay: 0.3s; }
