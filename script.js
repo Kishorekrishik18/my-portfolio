@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     dropdown.classList.toggle("active");
   });
 
+  const isMobile = window.innerWidth <= 767;
+  const note = document.getElementById("mobile-note");
+
+  if (isMobile && note) {
+    note.style.display = "block";
+  }
+
   // Apply staggered animation to each skill item
   const skills = document.querySelectorAll('.skill-item');
   skills.forEach((item, index) => {

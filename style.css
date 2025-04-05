@@ -262,6 +262,14 @@ body.light-mode {
     gap: 1rem;
   }
 
+  .mobile-warning {
+    color: #ffcc00;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  
   nav ul {
     flex-direction: column;
     gap: 0.5rem;
