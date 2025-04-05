@@ -395,7 +395,6 @@ body.light-mode {
     font-size: 1.25rem;
   }
 
-
   .hero h2 {
     font-size: 1.5rem;
   }
@@ -700,4 +699,46 @@ body.light-mode {
   0%, 100% { transform: scale(1); opacity: 0.6; }
   50% { transform: scale(1.1); opacity: 0.2; }
 }
+
+/* Default styles for desktop */
+.experience-point {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .highlighted-summary p,
+  .experience-point,
+  .role-dropdown,
+  .sub-date-range {
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+  }
+
+  .role-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+
+  .highlighted-summary {
+    padding: 0 15px;
+  }
+
+  .experience-list {
+    padding-left: 20px;
+  }
+}
+
+.experience-list {
+  transition: all 0.3s ease-in-out;
+}
+
+
 
