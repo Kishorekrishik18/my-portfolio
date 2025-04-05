@@ -708,33 +708,43 @@ body.light-mode {
 }
 
 /* Mobile adjustments */
-@media (max-width: 768px) {
-  .highlighted-summary p,
-  .experience-point,
-  .role-dropdown,
-  .sub-date-range {
-    font-size: 0.9rem !important;
-    line-height: 1.5;
-  }
+/* Default styles for smallest screens (mobile-first, 375px and below) */
+.container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow-x: hidden;
+}
 
-  .role-title {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dropdown {
-    margin-left: 0;
-    margin-top: 4px;
-  }
-
-  .highlighted-summary {
-    padding: 0 15px;
-  }
-
-  .experience-list {
-    padding-left: 20px;
+/* Styles for min-width: 375px */
+@media (min-width: 375px) {
+  .container {
+    padding: 18px;
+    gap: 1.2rem;
   }
 }
+
+/* Styles for min-width: 425px */
+@media (min-width: 425px) {
+  .container {
+    padding: 20px;
+    gap: 1.5rem;
+  }
+}
+
+/* Styles for min-width: 768px */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 2rem;
+  }
+}
+
 
 .experience-list {
   transition: all 0.3s ease-in-out;
