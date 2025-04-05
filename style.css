@@ -230,43 +230,50 @@ body.light-mode {
   align-items: center;
   cursor: pointer;
   font-weight: bold;
-  color: rgb(233, 227, 225);
+  color: rgb(230, 21, 21);
 }
 .job-title span {
   margin: 0 5px;
 }
+
 .role-title {
-  margin-top: 10px;
-  font-weight: 600;
-  width: 1500px;
-  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: black;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
   color: orangered;
+  box-shadow: darkcyan;
 }
+
 
 
 .experience-list {
   list-style-type: disc;
   padding-left: 20px;
 }
+
 .hidden {
   display: none;
 }
+
+.sub-date-range {
+  font-size: 0.85rem;
+  color: #e78326;
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+
 
 @media (max-width: 767px) {
   nav {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-  }
-
-  .mobile-warning {
-    color: #ffcc00;
-    font-size: 0.9rem;
-    margin-top: 1rem;
-    text-align: center;
   }
 
   
