@@ -2,11 +2,23 @@ console.log("Portfolio Loaded");
 
 document.addEventListener("DOMContentLoaded", function () {
   // Dropdown functionality
-  const dropdownBtn = document.querySelector(".dropdown-btn");
+  const dropdownBtn = document.querySelector(".role-dropdown");
   const dropdown = document.querySelector(".dropdown");
 
   dropdownBtn.addEventListener("click", function () {
     dropdown.classList.toggle("active");
+  });
+
+  // Apply staggered animation to each skill item
+  const skills = document.querySelectorAll('.skill-item');
+  skills.forEach((item, index) => {
+    item.style.animationDelay = `${index * 0.1}s`;
+  });
+
+  // Theme toggle
+  document.getElementById("theme-toggle").addEventListener("click", function () {
+    document.body.classList.toggle("light-mode");
+    this.textContent = document.body.classList.contains("light-mode") ? "🌞" : "🌙";
   });
 
   // Typing effect
@@ -39,19 +51,19 @@ document.addEventListener("DOMContentLoaded", function () {
   typeRole();
 });
 
-function toggleDropdown() {
-    const list = document.querySelector('.experience-list');
-    const dropdown = document.querySelector('.dropdown');
-
-    list.classList.toggle('hidden');
-    dropdown.textContent = list.classList.contains('hidden') ? '↓' : '↑';
+function toggleMainDropdown() {
+  const roleDropdown = document.querySelector(".role-dropdown");
+  const icon = document.querySelector(".job-title .dropdown");
+  roleDropdown.classList.toggle("hidden");
+  icon.textContent = roleDropdown.classList.contains("hidden") ? "↓" : "↑";
 }
 
-// Theme toggle
-document.getElementById("theme-toggle").addEventListener("click", function () {
-  document.body.classList.toggle("light-mode");
-  this.textContent = document.body.classList.contains("light-mode") ? "🌞" : "🌙";
-});
+function toggleRole(id) {
+  const list = document.getElementById(id);
+  const icon = list.previousElementSibling.querySelector(".dropdown");
+  list.classList.toggle("hidden");
+  icon.textContent = list.classList.contains("hidden") ? "↓" : "↑";
+}
 
 // Scroll to top
 const topBtn = document.getElementById("topBtn");
@@ -63,3 +75,18 @@ window.onscroll = () => {
 topBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Extra scroll-reveal effect using Intersection Observer
+const fadeInObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show-up');
+    }
+  });
+});
+
+document.querySelectorAll('section, .experience-container, .skill-item').forEach(el => {
+  el.classList.add('hidden-reveal');
+  fadeInObserver.observe(el);
+});
+

@@ -13,10 +13,11 @@
   <header>
     <nav>
       <h1 class="logo"><a href="https://kishorekrishik18.github.io/my-portfolio/">My Portfolio</a></h1>
-      <button id="theme-toggle">🌙</button>
+      <button id="theme-toggle" aria-label="Toggle dark/light theme">🌙</button>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -24,7 +25,7 @@
 
   <section class="hero">
     <h3>Hey there! Myself</h3>
-    <span><h2>Kishore Saravanan</h2>an</span>
+    <h2>Kishore Saravanan</h2>
     <h2 class="typing-text">hi</h2>
     <p>I build secure web apps using .NET and Vue.js</p>
     <a href="#contact">Contact Me</a>
@@ -41,35 +42,88 @@
     </p>
   </section>
 
-  <section id="experience">
-    <h2 class="experience-title">Experience - 1 year 6 months</h2>
-
-  <div class="experience-container">
-    <div class="job-title dropdown-btn" onclick="toggleDropdown()">
-        <span>Syncfusion - Software Engineer II      </span>
-        <span class="dropdown">     ↓</span>
-        <span class="job-duration">Sept 2023 to Present</span>
-    </div>
-
-    <ul class="experience-list hidden">
-        <li class="experience-point">Developed and enhanced Bold Sign, a microservices-based e-signature web app, using ASP.NET Core and Vue.</li>
-        <li class="experience-point">Implemented Clone Bulk Link using APIs with Swagger, enabling users to replicate bulk signing documents seamlessly.</li>
-        <li class="experience-point">Designed a form field positioning system with precise X/Y coordinates for accurate document customization.</li>
-        <li class="experience-point">Automated document deletion and scheduling through API-driven workflows.</li>
-        <li class="experience-point">Enforced role-based access control (RBAC) using ASP.NET policies for secure API interactions.</li>
-        <li class="experience-point">Wrote NUnit test cases for microservices APIs and features.</li>
-        <li class="experience-point">Transitioned to the Application Security team, performing penetration testing using Burp Suite.</li>
-        <li class="experience-point">Created Data Flow Diagrams (DFDs) with Threat Dragon for security analysis.</li>
-        <li class="experience-point">Discovered 50+ vulnerabilities, including 20+ critical issues related to business logic flaws and OWASP Top 10 threats.</li>
+  <section id="skills">
+    <div class="section-title">Skills</div>
+    <ul class="skills-list">
+      <li class="skill-item">ASP.NET Core</li>
+      <li class="skill-item">C#</li>
+      <li class="skill-item">REST APIs</li>
+      <li class="skill-item">Swagger</li>
+      <li class="skill-item">Entity Framework Core</li>
+      <li class="skill-item">Postgres</li>
+      <li class="skill-item">SQL</li>
+      <li class="skill-item">Dessign Pattern</li>
+      <li class="skill-item">Vue.js</li>
+      <li class="skill-item">Nuxt.js</li>
+      <li class="skill-item">TypeScript</li>
+      <li class="skill-item">JavaScript</li>
+      <li class="skill-item">NUnit</li>
+      <li class="skill-item">Burp Suite</li>
+      <li class="skill-item">Threat Dragon</li>
+      <li class="skill-item">OWASP Top 10</li>
     </ul>
-  </div>
+  </section>
 
+
+
+  <section id="experience">
+  <h2 class="experience-title">Experience - 1 year 6 months</h2>
+  
+    <div class="experience-container">
+      <div class="job-title" onclick="toggleMainDropdown()">
+        <span class="company-name">Syncfusion</span>
+        <span class="dropdown">↓</span>
+        <span class="date-range">Sept 2023 to Present</span>
+      </div>
+  
+      <div class="role-dropdown hidden">
+
+        <div class="role-title" onclick="toggleRole('role3')">
+          <span class="role-dropdown">Application Security Engineer</span>
+          <span class="dropdown">↓</span>
+        </div>
+        <ul class="experience-list hidden" id="role3">
+          <li class="experience-point">Conducted full-scale penetration testing and manual source code reviews.</li>
+          <li class="experience-point">Found 50+ issues including 30+ critical.</li>
+          <li class="experience-point">Gained expertise in OWASP Top 10 and mitigation techniques.</li>
+        </ul>
+
+
+
+        <div class="role-title" onclick="toggleRole('role2')">
+          <span class="role-dropdown">Software Engineer II</span>
+          <span class="dropdown">↓</span>
+        </div>
+        <ul class="experience-list hidden" id="role2">
+          <li class="experience-point">Wrote NUnit test cases for microservices APIs and features.</li>
+          <li class="experience-point">Implemented auto-send and auto-deletion for documents based on custom days, which can be set using the profile setting.</li>
+          <li class="experience-point">Added filters and cancel option for scheduled document send and document deletions.</li>
+          <li class="experience-point"><a href="https://support.boldsign.com/kb/article/16228/automatically-delete-the-documents" target="_blank" style="color:#00aaff; font-weight:bold;">View auto-deletion feature</a><span class="link-view"> →</span></li>
+          <li class="experience-point"><a href="https://support.boldsign.com/kb/article/19815/how-to-schedule-and-send-a-document" target="_blank" style="color:#00aaff; font-weight:bold;">View auto-send feature</a><span class="link-view"> →</span></li>
+        </ul>
+
+
+
+        <div class="role-title" onclick="toggleRole('role1')">
+          <span class="role-dropdown">Software Engineer I</span>
+          <span class="dropdown">↓</span>
+        </div> 
+        <ul class="experience-list hidden" id="role1">
+          <li class="experience-point">Worked on UI enhancements and resolved bug fixes.</li>
+          <li class="experience-point">Developed X/Y coordinate-based form field placement.</li>
+          <li class="experience-point">Enforced role-based access control (RBAC) using ASP.NET policies for secure API interactions.</li>
+          <li class="experience-point">Introduced the “Clone Bulk Link” feature, allowing users to duplicate and modify existing bulk links efficiently.</li>
+          <li class="experience-point"><a href="https://support.boldsign.com/kb/article/15676/copy-or-duplicate-bulk-link" target="_blank" style="color:#00aaff; font-weight:bold;">View Bulk Link Feature</a><span class="link-view"> →</span></li>
+        </ul>
+  
+      </div>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: vithyakishore18@email.com</p>
-    <p>Mobile: +91 7010632557</p>
+    <p><a href="mailto:vithyakishore18@email.com">vithyakishore18@email.com</a></p>
+    <p><a href="tel:+917010632557">+91 7010632557</a></p>
     <p><a href="https://www.linkedin.com/in/kishore-s-299b77231/">linkedin</a></p>
   </section>
 

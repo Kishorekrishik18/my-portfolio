@@ -219,24 +219,63 @@ body.light-mode {
 }
 
 .experience-container {
-  background-color: #0b1623;
+  background-color: rgb(9, 9, 9);
   padding: 15px;
   border-radius: 8px;
 }
 
 .job-title {
-  background-color: #e26a2e;
-  padding: 10px;
-  font-weight: bold;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  font-weight: bold;
+  color: rgb(233, 227, 225);
+}
+.job-title span {
+  margin: 0 5px;
+}
+.role-title {
+  margin-top: 10px;
+  font-weight: 600;
+  width: 1500px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: orangered;
+}
+
+
+.experience-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.hidden {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .job-title {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .date-range {
+    align-self: flex-end;
+    margin-top: 0.5rem;
+  }
+}
+
+.date-range {
+  color: #f1c40f; /* yellow-golden */
+  margin-left: auto;
   white-space: nowrap;
 }
 
 .dropdown {
-  margin-left: auto;
+  margin-left: 50px;
   transition: transform 0.3s ease;
 }
 
@@ -285,6 +324,229 @@ body.light-mode {
 .experience-point:nth-child(8) { animation-delay: 2.4s; }
 .experience-point:nth-child(9) { animation-delay: 2.7s; }
 
+/* Continuous up-down bounce animation */
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
 
+.dropdown {
+  display: inline-block;
+  animation: upDown 1s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes leftRight {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.link-view {
+  display: inline-block;
+  animation: leftRight 1s infinite ease-in-out;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  color: #64ffda;
+  border-bottom: 2px solid #00aaff;
+  display: inline-block;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  text-align: center;
+}
+
+
+.skill-item {
+  background-color: #f0faff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: #0077cc;
+  box-shadow: 0 2px 5px rgba(0, 170, 255, 0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.skill-item:hover {
+  background-color: #cceeff;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Trending Animations (Additions Only) --- */
+
+@keyframes glow {
+  0% { text-shadow: 0 0 5px #64ffda, 0 0 10px #64ffda; }
+  50% { text-shadow: 0 0 15px #64ffda, 0 0 25px #64ffda; }
+  100% { text-shadow: 0 0 5px #64ffda, 0 0 10px #64ffda; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-border {
+  0% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(100, 255, 218, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+}
+
+/* Add glow effect to name */
+.hero h2:nth-of-type(1) {
+  animation: glow 2s infinite;
+}
+
+/* Floating effect for typing-text */
+.typing-text {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse border for .hero button */
+.hero a {
+  animation: pulse-border 2.5s infinite;
+}
+
+/* Contact links hover hover-underline grow */
+#contact a {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+#contact a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #64ffda;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+#contact a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Reveal on scroll animation */
+.hidden-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.show-up {
+  opacity: 1 !important;
+  transform: translateY(0px) !important;
+}
+
+/* --- Extra Animations Additions --- */
+
+/* Typing cursor blink */
+.typing-text::after {
+  content: "|";
+  animation: blink 1s step-start infinite;
+  margin-left: 2px;
+  color: #64ffda;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Staggered skill item fade-in */
+.skill-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: skillFade 0.6s forwards;
+}
+
+@keyframes skillFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add delay to each skill dynamically using JS later */
+
+/* Glow hover effect on skill items */
+.skill-item:hover {
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.5);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Floating effect on contact icons */
+#contact a:hover svg {
+  animation: contactFloat 1.5s ease-in-out infinite;
+}
+
+@keyframes contactFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Background pulse for hero */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at center, #64ffda11 0%, transparent 70%);
+  animation: pulseBG 4s infinite;
+  z-index: 0;
+}
+
+@keyframes pulseBG {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 0.2; }
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
 
 
